@@ -78,23 +78,19 @@ document.querySelector(".tombol").addEventListener('click', function () {
                               /* Read more about isConfirmed, isDenied below */
                               if (result.isConfirmed) {
                                 Swal.fire('Aku Tunggu', '', '').then(function () {
-                                    const {
-                                      value: text
-                                    } = await Swal.fire({
-                                      input: 'textarea',
-                                      inputLabel: 'Deskripsikan Seorang Rezqy',
-                                      inputPlaceholder: 'Type your message here...',
-                                      inputAttributes: {
-                                        'aria-label': 'Type your message here'
-                                      },
-                                      showCancelButton: true
-                                    })
+                                  Swal.fire({
+                                    input: 'textarea',
+                                    inputLabel: 'Deskripsikan Seorang Rezqy',
+                                    inputPlaceholder: 'Type your message here...',
+                                    inputAttributes: {
+                                      'aria-label': 'Type your message here'
+                                    },
+                                    showCancelButton: true
                                   })
-                                  .then(function () {
-                                    Swal.fire('Terakhir deh sayang').then(function () {
-                                      Swal.fire('Coba klik ikon hati di paling bawah dong')
-                                    })
-                                  })
+                                })
+                                Swal.fire('Terakhir deh sayang').then(function () {
+                                  Swal.fire('Coba klik ikon hati di paling bawah dong')
+                                })
                               } else if (result.isDenied) {
                                 Swal.fire('Yahhhhh :(', '', )
                               }
